@@ -15,14 +15,12 @@ public class Admin {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "Nickname is mandatory")
     private String nickname;
 
     @Email(message = "Invalid email format")
-    @NotBlank(message = "Email is mandatory")
+    @Column(unique = true)
     private String email;
 
-    @NotBlank(message = "Password is mandatory")
     private String password;
 
     @OneToMany(mappedBy = "admin", cascade = CascadeType.ALL)
