@@ -10,8 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
-
 @CrossOrigin
 @RestController
 @RequestMapping("/api")
@@ -25,10 +23,6 @@ public class ApiController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody Map<String, String> loginData, HttpSession session) {
-        String email = loginData.get("email");
-        String password = loginData.get("password");
-
         Admin admin = adminService.getAdminByEmail(email);
         if (admin != null && password.equals(admin.getPassword())) {
             session.setAttribute("admin", admin);
