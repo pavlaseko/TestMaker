@@ -22,13 +22,13 @@ public class Test {
     private List<Question> questions = new ArrayList<>();
 
     @ManyToOne
-    private Admin admin;
+    private User user;
 
     public Test() { }
 
-    public Test(String name, Admin admin) {
+    public Test(String name, User user) {
         this.name = name;
-        this.admin = admin;
+        this.user = user;
     }
 
     public void addQuestion(Question question) {

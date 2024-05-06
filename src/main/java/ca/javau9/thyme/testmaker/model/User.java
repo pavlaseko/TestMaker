@@ -1,16 +1,17 @@
 package ca.javau9.thyme.testmaker.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
+import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import java.util.ArrayList;
 import java.util.List;
 
-@Setter
-@Getter
+@Data
+@NoArgsConstructor
 @Entity
-public class Admin {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -23,22 +24,15 @@ public class Admin {
 
     private String password;
 
+    private String role;
+
     @OneToMany(mappedBy = "admin", cascade = CascadeType.ALL)
     private List<Test> tests = new ArrayList<>();
 
-    public Admin(String name, String email, String password) {
+    public User(String name, String email, String password, String role) {
         this.nickname = name;
         this.email = email;
         this.password = password;
-    }
-
-    public Admin() { }
-
-    public void addTest(Test test) {
-        if (test == null) {
-            throw new IllegalArgumentException("Test cannot be null");
-        }
-        tests.add(test);
-        test.setAdmin(this);
+        this.role = role;
     }
 }
