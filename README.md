@@ -1,7 +1,10 @@
-# Project Title
-
+                                            # TEST MAKER APP #
+### Project idea
 Project idea was to implement basic "Test Maker" app functionality, however it is a lot to do and to work with,
 but for now it is great "Basic Authentication" project example to secure both frontend and backend.
+
+It is important to mention, that the structure of frontend app was taken from my other book project
+and i am still working on it.
 
 Back-end uses [`Spring Boot`](https://www.baeldung.com/spring-boot) application called TestMaker
 Front-end uses [`React`](https://www.w3schools.com/react/default.asp) application called frontend
@@ -25,6 +28,7 @@ it is already in this project.
 ### Installation
 
 - **frontend**
+    - Frontend is still not done yet, however you can check it out and work with it.
 
     - Open  terminal and navigate to `frontend` folder;
 
