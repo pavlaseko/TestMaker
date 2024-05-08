@@ -1,4 +1,4 @@
-                                            # TEST MAKER APP #
+#TEST MAKER APP
 ### Project idea
 Project idea was to implement basic "Test Maker" app functionality, however it is a lot to do and to work with,
 but for now it is great "Basic Authentication" project example to secure both frontend and backend.
