@@ -11,28 +11,27 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @Entity
+@Table(name = "users", uniqueConstraints = {
+        @UniqueConstraint(columnNames = "username"),
+        @UniqueConstraint(columnNames = "email")
+})
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nickname;
-
-    @Email(message = "Invalid email format")
-    @Column(unique = true)
-    private String email;
-
+    private String username;
     private String password;
-
+    private String name;
+    private String email;
     private String role;
 
-    @OneToMany(mappedBy = "admin", cascade = CascadeType.ALL)
-    private List<Test> tests = new ArrayList<>();
-
-    public User(String name, String email, String password, String role) {
-        this.nickname = name;
-        this.email = email;
+    public User(String username, String password, String name, String email, String role) {
+        this.username = username;
         this.password = password;
+        this.name = name;
+        this.email = email;
         this.role = role;
     }
 }

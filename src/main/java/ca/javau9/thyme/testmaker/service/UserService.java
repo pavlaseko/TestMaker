@@ -7,19 +7,19 @@ import java.util.Optional;
 
 public interface UserService {
 
-    Optional<User> getUserByNickname(String nickname);
+    List<User> getUsers();
+
+    Optional<User> getUserByUsername(String username);
+
+    boolean hasUserWithUsername(String username);
+
+    boolean hasUserWithEmail(String email);
+
+    User validateAndGetUserByUsername(String username);
 
     User saveUser(User user);
 
-    List<User> getAllUsers();
-
-    boolean hasUserWithNickname(String nickname);
-
-    User validateAndGetUserByNickname(String nickname);
-
     void deleteUser(User user);
-
-    boolean hasUserWithEmail(String email);
 
     Optional<User> validUsernameAndPassword(String username, String password);
 }

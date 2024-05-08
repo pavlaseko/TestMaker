@@ -45,7 +45,7 @@ public class TestServiceImpl implements TestService {
     }
 
     @Override
-    public List<Test> getTestByAdminId(Long adminId) {
-        return testRepository.findByAdminId(adminId);
+    public List<Test> getTestByAdminId(Long userId) {
+        return testRepository.findTestByuserId(userId);
     }
 }
